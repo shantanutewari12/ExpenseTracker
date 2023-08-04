@@ -32,6 +32,9 @@ date: new Date(enteredDate)
     }
 
     console.log(expenseData)
+    setEnteredTitle('')
+    setEnteredAmount('')
+    setEnteredDate('')
 }
 
 
@@ -41,17 +44,30 @@ date: new Date(enteredDate)
 
 <div className='new-expense__control'>
     <label>Title</label>
-    <input type='text' onChange={titleChangeHandler} />
+    <input 
+      type='text' 
+      value={enteredTitle} 
+      onChange={titleChangeHandler} />
 </div>
 
 <div className='new-expense__control'>
     <label>Amount</label>
-    <input type='number' min="0.1" step="0.01" onChange={amountChangeHandler} />
+    <input
+     type='number' 
+     min="0.1" 
+     step="0.01" 
+     value={enteredAmount}
+     onChange={amountChangeHandler} />
 </div>
 
 <div className='new-expense__control'>
     <label>Date</label>
-    <input type='date' min="2001-08-12" max="2030-08-12" onChange={dateChangeHandler} />
+    <input
+     type='date'
+      min="2001-08-12" 
+      max="2030-08-12" 
+      value={enteredDate}
+      onChange={dateChangeHandler} />
 </div>
 
 </div>
